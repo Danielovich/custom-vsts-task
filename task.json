@@ -1,0 +1,43 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
+    "id": "7a3fbeab-c278-458e-94f8-f8cb044d10d9",
+    "name": "simpletask",
+    "friendlyName": "simpletask",
+    "instanceNameFormat": "simpletask",
+    "description": "simpletask",
+    "helpMarkDown": "",
+    "category": "Build",
+    "author": "Daniel Frost",
+    "version": {
+        "Major": 0,
+        "Minor": 2,
+        "Patch": 0
+    },
+    "groups": [
+        {
+            "name": "inputGroup",
+            "displayName": "Source",
+            "isExpanded": true
+        }
+    ],
+    "inputs": [
+        {
+            "name": "name",
+            "type": "string",
+            "label": "Your name",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "Your name",
+            "groupName": "inputGroup"
+        }
+    ],
+    "execution": {
+        "PowerShell3": {
+            "target": "task.ps1",
+            "platforms": [
+                "windows"
+            ],
+            "workingDirectory": "$(currentDirectory)"
+        }
+    }
+}
